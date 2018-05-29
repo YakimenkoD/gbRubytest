@@ -18,7 +18,7 @@ result = case                          #когда нибудь, я научус
 			else ""
 		end
 		case 
-			when s>0 then result+=s_w
+			when s=>0 then result+=s_w
 		end
 
 puts result
