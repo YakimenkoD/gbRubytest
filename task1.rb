@@ -1,4 +1,3 @@
-i,a,b = ARGV[0].to_i, ARGV[1].to_i, ARGV[2].to_i
+i, a, b = ARGV[0], ARGV[1],ARGV[2]
 
-def convert_base(num, current_base, requered_base)
-	
+puts i.to_i(a.to_i).to_s(b.to_i) #обожаю встроенные методы Ruby
