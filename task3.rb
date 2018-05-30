@@ -26,5 +26,3 @@ if time == 0
 end
 
 puts result
-
-	
