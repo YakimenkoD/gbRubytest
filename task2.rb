@@ -19,10 +19,6 @@ day = ARGV[0]
 month = ARGV[1]
 year = ARGV[2]
 
-puts day
-puts month
-
-puts year
 days_in_year = 365 + (Date.gregorian_leap?(year.to_i) ? 1 : 0)
 date = Date.new(
   year.to_i,
