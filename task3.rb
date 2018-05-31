@@ -1,23 +1,28 @@
-def format_time(number, forms)
-  return if number == 0
-  postfix =
-    case number
-    when 1    then forms[0]
-    when 2..4 then forms[1]
-    else           forms[2]
-    end
-  "#{number} #{postfix}"
+time = ARGV[0].to_i + ARGV[1].to_i
+
+h   = time/3600
+m   = (time - h * 3600) / 60
+s   = time - h * 3600 - m * 60
+h_w = ("#{h} часов "  if ((5..20).include?(h%100)) or (5..9).include?(h%10) or h%100 == 0 )  || ("#{h} часа "   if (2..4).include?(h%10))  || "#{h} час "
+m_w = ("#{m} минут "  if ((5..20).include?(m%100)) or (5..9).include?(m%10) or m%10  == 0 )  || ("#{m} минуты " if (2..4).include?(m%10))  || "#{m} минута "
+s_w = ("#{s} секунд"  if ((5..20).include?(s%100)) or (5..9).include?(s%10) or s%10  == 0 )  || ("#{s} секунды" if (2..4).include?(s%10))  || "#{s} секунда"
+
+result = ""
+
+result = case 
+			when h>0 then result+=h_w
+			else ""	
+		end
+		case 
+			when m>0 then result+=m_w
+			else ""
+		end
+		case 
+			when s>0 then result+=s_w
+		end
+
+if time == 0
+	result = "0 секунд"
 end
 
-s = ARGV.map(&:to_i).reduce(:+)
-return '0 секунд' if s == 0
-
-hours = s / 3600
-minutes = s / 60 - hours * 60
-seconds = s % 60
-
-puts [
-  format_time(hours, %w(час часа часов)),
-  format_time(minutes, %w(минута минуты минут)),
-  format_time(seconds, %w(секунда секунды секунд))
-].compact.join(' ')
+puts result

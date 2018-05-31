@@ -1,6 +1,3 @@
-n = ARGV[0]
-from = ARGV[1]
-to = ARGV[2]
-result = n.to_i(from.to_i).to_s(to.to_i)
+i, a, b = ARGV[0], ARGV[1],ARGV[2]
 
-puts result
+puts i.to_i(a.to_i).to_s(b.to_i)
