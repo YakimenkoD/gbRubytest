@@ -9,7 +9,8 @@ m_w = ("#{m} минут "  if ((5..20).include?(m%100)) or (5..9).include?(m%10)
 s_w = ("#{s} секунд"  if ((5..20).include?(s%100)) or (5..9).include?(s%10) or s%10  == 0 )  || ("#{s} секунды" if (2..4).include?(s%10))  || "#{s} секунда"
 
 result = ""
-result = case                         
+
+result = case 
 			when h>0 then result+=h_w
 			else ""	
 		end
