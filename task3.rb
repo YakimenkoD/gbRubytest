@@ -9,12 +9,12 @@ def format_time(number, forms)
   "#{number} #{postfix}"
 end
 
-time = ARGV.map(&:to_i).reduce(:+)
-return '0 секунд' if time == 0
+s = ARGV.map(&:to_i).reduce(:+)
+return '0 секунд' if s == 0
 
-hours   = time / 3600
-minutes = time / 60 - hours * 60
-seconds = time % 60
+hours = s / 3600
+minutes = s / 60 - hours * 60
+seconds = s % 60
 
 puts [
   format_time(hours, %w(час часа часов)),
