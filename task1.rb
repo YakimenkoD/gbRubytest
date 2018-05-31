@@ -14,13 +14,9 @@ for r in 0..(i.length-1)
 end
 
 while k do
-	result.insert(0,base.key(e%b))
-	e= e/b
-   	if (e<b)
-        k=false
-        if e!=0
-            result.insert(0,base.key(e))
-        end
-    end
+result.insert(0,base.key(e%b))
+e/= b
+k=false if (e<b) 
+	result.insert(0,base.key(e))  if e!=0
 end
 puts result
