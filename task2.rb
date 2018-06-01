@@ -12,4 +12,4 @@ m=month[m]
 
 dm[m] = dm[m] - d 
 dm = dm[m.. -1]
-puts dm.inject(0, :+)
+puts (dm.inject(0, :+).to_s).force_encoding("UTF-8")

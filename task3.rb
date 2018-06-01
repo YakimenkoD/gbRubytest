@@ -25,4 +25,4 @@ if time == 0
 	result = "0 секунд"
 end
 
-puts result
+puts result.force_encoding("UTF-8")
