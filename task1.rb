@@ -1,4 +1,4 @@
-i = ARGV[0]
+i = ARGV[0].downcase
 a = ARGV[1]
 b = ARGV[2]
 
