@@ -26,3 +26,4 @@ if time == 0
 end
 
 puts result.force_encoding("UTF-8")
+#проверка

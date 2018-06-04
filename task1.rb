@@ -7,3 +7,4 @@ def base_changer( number, from_base, to_base)
 end
 
 puts(base_changer(i,a,b))
+#проверка
