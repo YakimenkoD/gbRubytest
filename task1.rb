@@ -1,9 +1,1 @@
-i = ARGV[0].downcase
-a = ARGV[1]
-b = ARGV[2]
-
-def base_changer( number, from_base, to_base)
-	return (number.to_i(from_base.to_i).to_s(to_base.to_i)).force_encoding("UTF-8")
-end
-
-puts(base_changer(i,a,b))
+puts (ARGV[0].to_i(ARGV[1].to_i).to_s(ARGV[2].to_i))
